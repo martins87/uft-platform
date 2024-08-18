@@ -8,12 +8,16 @@ import PiggyBank from "../../assets/icons/PiggyBank.svg";
 
 const Sidebar = () => {
   return (
-    <div className="absolute left-0 w-64 h-full flex flex-col gap-y-2 py-4 px-4 items-start bg-gray-100">
-      <SidebarMenuItem label="Notarization" icon={FileCheck} />
+    <div className="w-64 h-full flex flex-col gap-y-2 py-4 px-4 items-start bg-gray-100">
+      <SidebarMenuItem
+        label="Notarization"
+        icon={FileCheck}
+        src="/notarization"
+      />
       <SidebarMenuItem label="Address monitoring" icon={Wallet} />
       <SidebarMenuItem label="Signature verifier" icon={BadgeCheck} />
-      <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
       <SidebarMenuItem label="Proof of funds" icon={PiggyBank} />
+      <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
     </div>
   );
 };
