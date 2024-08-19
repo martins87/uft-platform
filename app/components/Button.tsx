@@ -27,8 +27,8 @@ const Button: FC<ButtonProps> = ({
           : primary
           ? "bg-gray-800 text-white tracking-wide hover:bg-gray-700"
           : "",
-        disabled
-          ? "bg-gray-700 text-gray-500 cursor-not-allowed hover:bg-gray-700"
+        disabled && primary
+          ? "bg-gray-200 text-gray-500 cursor-not-allowed hover:bg-gray-200"
           : "",
         className
       )}
