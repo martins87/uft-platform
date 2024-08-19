@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bitcoinjs-message": "^2.2.0",
     "crypto-js": "^4.2.0",
     "ethers": "^6.13.2",
     "next": "14.2.5",

@@ -14,9 +14,13 @@ const Sidebar = () => {
         icon={FileCheck}
         src="/notarization"
       />
-      <SidebarMenuItem label="Address monitoring" icon={Wallet} />
-      <SidebarMenuItem label="Signature verifier" icon={BadgeCheck} />
+      <SidebarMenuItem
+        label="Signature verifier"
+        icon={BadgeCheck}
+        src="/signature-verifier"
+      />
       <SidebarMenuItem label="Proof of funds" icon={PiggyBank} />
+      <SidebarMenuItem label="Address monitoring" icon={Wallet} />
       <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
     </div>
   );

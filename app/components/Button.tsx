@@ -7,6 +7,7 @@ type ButtonProps = {
   onClick: () => void;
   label: string;
   disabled?: boolean;
+  className?: string;
 };
 
 const Button: FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   label,
   disabled,
+  className,
 }) => {
   return (
     <button
@@ -27,7 +29,8 @@ const Button: FC<ButtonProps> = ({
           : "",
         disabled
           ? "bg-gray-700 text-gray-500 cursor-not-allowed hover:bg-gray-700"
-          : ""
+          : "",
+        className
       )}
       onClick={onClick}
     >
