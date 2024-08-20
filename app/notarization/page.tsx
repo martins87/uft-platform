@@ -4,20 +4,29 @@ import { useState } from "react";
 
 import Container from "../components/Container";
 import Icon from "../components/Icon";
-import Pen from "../assets/icons/Pen.svg";
-import PaperClip from "../assets/icons/PaperClip.svg";
-import List from "../assets/icons/List.svg";
+import Header from "../components/Header";
 import PlainText from "./PlainText";
 import File from "./File";
 import TxList from "./TxList";
-import Header from "./Header";
+import Pen from "../assets/icons/Pen.svg";
+import PaperClip from "../assets/icons/PaperClip.svg";
+import List from "../assets/icons/List.svg";
 
 const Notarization = () => {
   const [card, setCard] = useState(0);
 
   return (
     <Container>
-      <Header />
+      <Header
+        title="Notarization on-chain"
+        subtitle={
+          <p>
+            Secure your data with a click. No technical skills needed, just
+            enter your data
+            <br /> and it is registered on the Ethereum blockchain in seconds
+          </p>
+        }
+      />
       <div className="w-[80%] md:w-full flex gap-6 float-left mb-4">
         <Icon icon={Pen} onClick={() => setCard(0)} />
         <Icon icon={PaperClip} onClick={() => setCard(1)} />

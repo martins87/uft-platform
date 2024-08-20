@@ -19,7 +19,11 @@ const Sidebar = () => {
         icon={BadgeCheck}
         src="/signature-verifier"
       />
-      <SidebarMenuItem label="Proof of funds" icon={PiggyBank} />
+      <SidebarMenuItem
+        label="Proof of funds"
+        icon={PiggyBank}
+        src="/proof-of-funds"
+      />
       <SidebarMenuItem label="Address monitoring" icon={Wallet} />
       <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
     </div>
