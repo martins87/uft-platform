@@ -20,9 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="w-full h-screen flex items-center justify-center p-4">
-          <div className="w-full h-full flex items-center justify-center border border-gray-400 rounded-md overflow-hidden">
+          <div className="w-full h-full flex items-center justify-center border border-gray-400">
             <Sidebar />
-            <div className="flex flex-1 items-center justify-center">
+            <div className="relative w-fit h-full flex flex-1 items-center justify-center overflow-y-scroll">
               {children}
             </div>
           </div>

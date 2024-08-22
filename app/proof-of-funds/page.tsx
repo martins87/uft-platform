@@ -21,10 +21,12 @@ enum VerificationMessage {
 }
 
 const ProofOfFunds = () => {
+  const [totalAmount, setTotalAmount] = useState<number>(0);
+
   const [message, setMessage] = useState<string>("");
   const [address, setAddress] = useState<string>("");
   const [signature, setSignature] = useState<string>("");
-  const [balance, setBalance] = useState<string>("");
+  const [balance, setBalance] = useState<number>(0);
   const [fetchingBalance, setFetchingBalance] = useState<boolean>(false);
   const [usdBalance, setUsdBalance] = useState<string>("");
   const [messageVisible, setMessageVisible] = useState<boolean>(false);
@@ -52,7 +54,7 @@ const ProofOfFunds = () => {
 
     try {
       const response = await axios.get(
-        `https://blockchain.info/q/addressbalance/${address}`
+        `https://blockchain.info/q/addressbalance/${address.trim()}`
       );
 
       // setTimeout(() => {
@@ -62,7 +64,7 @@ const ProofOfFunds = () => {
         currency: "USD",
       });
 
-      setBalance(`₿ ${bitcoinBalance.toString()}`);
+      setBalance(bitcoinBalance);
       setUsdBalance(`${USDollar.format(rate * bitcoinBalance)}`);
       // }, 1000);
 
@@ -77,8 +79,6 @@ const ProofOfFunds = () => {
   const onAddressChange = (e: any) => {
     let addr: string = e.target.value;
 
-    setAddress(addr);
-
     if (addr.length > 0) {
       setFetchingBalance(true);
 
@@ -88,14 +88,16 @@ const ProofOfFunds = () => {
 
       setFetchingBalance(false);
     }
+
+    setAddress(addr);
   };
 
-  const handleVerify = async () => {
+  const handleVerify = async (balance: number) => {
     try {
       const validSig = bitcoinMessage.verify(
-        message,
-        address,
-        signature,
+        message.trim(),
+        address.trim(),
+        signature.trim(),
         undefined,
         true
       );
@@ -105,6 +107,7 @@ const ProofOfFunds = () => {
         setResultMessage("The signature is valid");
         setSigBgColor("bg-green-100");
         setResultSymbol(VerificationMessage.Valid);
+        setTotalAmount((state) => state + balance);
       } else {
         console.log("Not a valid signature");
         setResultMessage("Not a valid signature");
@@ -131,8 +134,13 @@ const ProofOfFunds = () => {
           </p>
         }
       />
+      <span className="w-fit min-h-12 -mt-8 mb-10 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-lg text-clip">
+        Total amount you own: ₿ {totalAmount.toString()}
+      </span>
       <Card className="gap-y-[12px]">
-        <span className="text-center text-xl text-gray-700">Message</span>
+        <div className="flex flex-col items-center justify-center gap-4 text-xl text-gray-700">
+          <span>Message</span>
+        </div>
         <textarea
           className="textarea textarea-bordered min-h-20 px-4 py-2 border rounded-md text-sm focus:outline-none mb-6"
           value={message}
@@ -156,14 +164,18 @@ const ProofOfFunds = () => {
 
           <div className="flex items-center gap-x-2">
             <span className="text-gray-700 min-w-20">Balance:</span>
-            <span className="w-fit flex items-center gap-2 bg-orange-100 text-lg px-3 py-2 rounded-lg text-clip">
+            <span className="w-fit min-h-12 flex items-center gap-2 bg-orange-100 text-lg px-4 py-2 rounded-lg text-clip">
               {!address.length ? (
                 <span className="text-sm text-gray-500">
                   Enter a Bitcoin address to fetch balance
                 </span>
+              ) : fetchingBalance ? (
+                <span className="text-sm text-gray-500">
+                  Fetching balance...
+                </span>
               ) : (
                 <div>
-                  {balance}
+                  {`₿ ${balance.toString()}`}
                   <span className="text-base"> | </span>
                   <span className="text-sm">{usdBalance}</span>
                 </div>
@@ -188,7 +200,7 @@ const ProofOfFunds = () => {
             <Button
               className="absolute left-0 bottom-2"
               primary
-              onClick={handleVerify}
+              onClick={() => handleVerify(balance)}
               label="Check ownership"
               // TODO add validation
             />
