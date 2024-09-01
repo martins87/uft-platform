@@ -5,6 +5,7 @@ import Wallet from "../../assets/icons/Wallet.svg";
 import BadgeCheck from "../../assets/icons/BadgeCheck.svg";
 import SeedPhraseImage from "../../assets/icons/Image.svg";
 import PiggyBank from "../../assets/icons/PiggyBank.svg";
+import FileDigit from "../../assets/icons/FileDigit.svg";
 
 const Sidebar = () => {
   return (
@@ -26,6 +27,7 @@ const Sidebar = () => {
       />
       <SidebarMenuItem label="Address monitoring" icon={Wallet} />
       <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
+      <SidebarMenuItem label="BIP39 hexa/word converter" icon={FileDigit} />
     </div>
   );
 };

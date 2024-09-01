@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -8,6 +9,7 @@ type ButtonProps = {
   label: string;
   disabled?: boolean;
   className?: string;
+  icon?: any;
 };
 
 const Button: FC<ButtonProps> = ({
@@ -17,11 +19,12 @@ const Button: FC<ButtonProps> = ({
   label,
   disabled,
   className,
+  icon,
 }) => {
   return (
     <button
       className={twMerge(
-        "w-fit rounded-lg py-2 px-4 text-sm min-w-24",
+        "w-fit flex items-center justify-center gap-2 rounded-lg py-2 px-4 text-sm min-w-24",
         secondary
           ? "bg-gray-200 font-bold tracking-wide hover:bg-gray-300"
           : primary
@@ -34,6 +37,7 @@ const Button: FC<ButtonProps> = ({
       )}
       onClick={onClick}
     >
+      {icon && <Image width={20} src={icon} alt="plus icon" />}
       {label}
     </button>
   );
