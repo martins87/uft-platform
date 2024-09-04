@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter, Fraunces } from "next/font/google";
+import { twMerge } from "tailwind-merge";
 
 import Sidebar from "./components/Sidebar/Sidebar";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={twMerge(inter.className, `${fraunces.variable}`)}>
         <div className="w-full h-screen flex items-center justify-center p-4">
           <div className="w-full h-full flex items-center justify-center border border-gray-400">
             <Sidebar />

@@ -27,7 +27,11 @@ const Sidebar = () => {
       />
       <SidebarMenuItem label="Address monitoring" icon={Wallet} />
       <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
-      <SidebarMenuItem label="BIP39 hexa/word converter" icon={FileDigit} />
+      <SidebarMenuItem
+        label="BIP39 hexadecimal to word converter"
+        icon={FileDigit}
+        src="/bip39-converter"
+      />
     </div>
   );
 };

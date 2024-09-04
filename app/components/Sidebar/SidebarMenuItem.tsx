@@ -15,7 +15,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({ label, icon, src }) => {
       href={src || "/"}
     >
       <Image className="text-gray-500" src={icon} alt="notarization icon" />
-      <span className="text-sm text-gray-700">{label}</span>
+      <span className="text-sm text-gray-700 leading-4">{label}</span>
     </Link>
   );
 };
