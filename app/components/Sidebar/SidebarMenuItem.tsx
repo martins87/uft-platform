@@ -14,7 +14,7 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({ label, icon, src }) => {
       className="w-full flex items-center gap-4 p-2 hover:cursor-pointer hover:bg-gray-200 hover:rounded-md"
       href={src || "/"}
     >
-      <Image className="text-gray-500" src={icon} alt="notarization icon" />
+      <Image className="text-gray-500" src={icon} alt="sidebar icon" />
       <span className="text-sm text-gray-700 leading-4">{label}</span>
     </Link>
   );

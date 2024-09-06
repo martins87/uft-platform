@@ -1,5 +1,4 @@
 import SidebarMenuItem from "./SidebarMenuItem";
-
 import SeedPhraseImage from "../../assets/icons/Image.svg";
 import EditDocument from "../../assets/icons/EditDocument.svg";
 import VerifiedUser from "../../assets/icons/VerifiedUser.svg";
