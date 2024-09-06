@@ -28,7 +28,7 @@ const Sidebar = () => {
       <SidebarMenuItem label="Address monitoring" icon={AccountBalanceWallet} />
       <SidebarMenuItem label="Seed phase into image" icon={SeedPhraseImage} />
       <SidebarMenuItem
-        label="BIP39 hexadecimal to word converter"
+        label="BIP39 word converter"
         icon={SwapHoriz}
         src="/bip39-converter"
       />
