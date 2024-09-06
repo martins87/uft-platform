@@ -21,7 +21,7 @@ const BIP39Converter = () => {
   const [decimal, setDecimal] = useState<string>("");
 
   const getWordFromHex = (hexStr: string) => {
-    let index: number = converter.hexToDec(hexStr);
+    let index: number = Number(converter.hexToDec(hexStr));
 
     return words[index];
   };
