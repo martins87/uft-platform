@@ -16,10 +16,10 @@ const SHA256Hash: FC<SHA256Hash> = ({ data, toHash }) => {
   return (
     <div className="flex items-center gap-2 -mt-4">
       <span className="text-sm">SHA256 hash:</span>
-      <span className="w-fit text-sm bg-gray-100 p-2 rounded-lg text-clip md:hidden">
+      <span className="w-fit text-sm bg-gray-100 p-2 rounded-lg text-clip xl:hidden">
         {truncated(dataToShow)}
       </span>
-      <span className="w-fit bg-gray-100 text-sm p-2 rounded-lg text-clip hidden md:flex">
+      <span className="w-fit bg-gray-100 text-xs p-2 rounded-lg text-clip hidden xl:flex">
         {dataToShow}
       </span>
     </div>
