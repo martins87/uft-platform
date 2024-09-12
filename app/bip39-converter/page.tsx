@@ -8,10 +8,10 @@ import { twMerge } from "tailwind-merge";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Card from "../components/Card";
-import ArrowForward from "../assets/icons/ArrowForward.svg";
 import Copy from "../assets/icons/Copy.svg";
 import Check from "../assets/icons/Check.svg";
 import { bip39Words } from "../data/bip0039-english.js";
+import Arrow from "./Arrow";
 
 const words = ["Taxation is theft", ...bip39Words];
 
@@ -84,59 +84,58 @@ const BIP39Converter = () => {
       />
       <Card className="flex items-center py-12">
         <span className="mx-auto text-gray-900">Hexadecimal to word</span>
-        <div className="relative flex gap-x-4 -mt-5">
+        <div className="flex flex-col lg:flex-row gap-x-4 -mt-5">
           <input
-            className="w-36 h-12 border rounded-md px-4 text-lg focus:outline-none"
+            className="w-44 h-12 border rounded-md px-4 text-lg focus:outline-none"
             type="text"
             value={hexadecimalWord}
             onChange={handleChange}
             placeholder="e.g. 52E"
           />
-          <Image src={ArrowForward} alt="forward arrow" />
-          <div className="w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
+          <Arrow />
+          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
             {hexadecimalWord ? (
               <span className="text-lg">{bip39Word}</span>
             ) : (
               <span className="text-lg text-gray-400">pizza</span>
             )}
+            <Image
+              className={twMerge(
+                "absolute right-2 top-[50%] -translate-y-1/2",
+                hexadecimalWord ? "hover:cursor-pointer" : "opacity-50"
+              )}
+              src={icons[0]}
+              alt="Copy to clipboard"
+              onClick={() => handleCopy(bip39Word, 0)}
+            />
           </div>
-          <Image
-            className={twMerge(
-              "absolute right-2 top-[50%] -translate-y-1/2",
-              hexadecimalWord ? "hover:cursor-pointer" : "opacity-50"
-            )}
-            src={icons[0]}
-            alt="Copy to clipboard"
-            onClick={() => handleCopy(bip39Word, 0)}
-          />
         </div>
-
         <span className="mx-auto text-gray-900">Word to decimal</span>
-        <div className="relative flex gap-x-4 -mt-5">
+        <div className="relative flex flex-col lg:flex-row gap-x-4 -mt-5">
           <input
-            className="w-36 h-12 border rounded-md px-4 text-lg focus:outline-none"
+            className="w-44 h-12 border rounded-md px-4 text-lg focus:outline-none"
             type="text"
             value={decimalWord}
             onChange={handleChangeDecimal}
             placeholder="e.g. dance"
           />
-          <Image src={ArrowForward} alt="forward arrow" />
-          <div className="w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
+          <Arrow />
+          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
             {decimalWord ? (
               <span className="text-lg">{decimal}</span>
             ) : (
               <span className="text-lg text-gray-400">443</span>
             )}
+            <Image
+              className={twMerge(
+                "absolute right-2 top-[50%] -translate-y-1/2",
+                decimalWord ? "hover:cursor-pointer" : "opacity-50"
+              )}
+              src={icons[1]}
+              alt="Copy to clipboard"
+              onClick={() => handleCopy(decimal, 1)}
+            />
           </div>
-          <Image
-            className={twMerge(
-              "absolute right-2 top-[50%] -translate-y-1/2",
-              decimalWord ? "hover:cursor-pointer" : "opacity-50"
-            )}
-            src={icons[1]}
-            alt="Copy to clipboard"
-            onClick={() => handleCopy(decimal, 1)}
-          />
         </div>
       </Card>
     </Container>
