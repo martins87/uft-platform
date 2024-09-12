@@ -84,6 +84,15 @@ const Sidebar: FC<SidebarProps> = ({
             onClick={handleClick}
           />
           <SidebarMenuItem
+            label="BIP39 word converter"
+            icon={SwapHoriz}
+            src="/bip39-converter"
+            onClick={handleClick}
+          />
+          <div className="w-full p-2">
+            <span className="text-sm font-bold text-gray-700">Soon</span>
+          </div>
+          <SidebarMenuItem
             label="Address monitoring"
             icon={AccountBalanceWallet}
             onClick={handleClick}
@@ -91,12 +100,6 @@ const Sidebar: FC<SidebarProps> = ({
           <SidebarMenuItem
             label="Seed phase into image"
             icon={SeedPhraseImage}
-            onClick={handleClick}
-          />
-          <SidebarMenuItem
-            label="BIP39 word converter"
-            icon={SwapHoriz}
-            src="/bip39-converter"
             onClick={handleClick}
           />
         </div>

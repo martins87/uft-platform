@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 type SidebarMenuItemProps = {
   label: string;
@@ -17,7 +18,10 @@ const SidebarMenuItem: FC<SidebarMenuItemProps> = ({
 }) => {
   return (
     <Link
-      className="w-full flex items-center gap-4 p-2 hover:cursor-pointer hover:bg-gray-200 hover:rounded-md"
+      className={twMerge(
+        "w-full flex items-center gap-4 p-2 hover:cursor-pointer hover:bg-gray-200 hover:rounded-md",
+        !src && "pointer-events-none"
+      )}
       href={src || "/"}
       onClick={onClick}
     >
