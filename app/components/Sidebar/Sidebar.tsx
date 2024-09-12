@@ -1,10 +1,12 @@
-import { FC, useState } from "react";
+import { FC } from "react";
+import Image from "next/image";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { twMerge } from "tailwind-merge";
 
 import SidebarMenuItem from "./SidebarMenuItem";
 import SeedPhraseImage from "../../assets/icons/Image.svg";
@@ -15,14 +17,38 @@ import AccountBalanceWallet from "../../assets/icons/AccountBalanceWallet.svg";
 import SwapHoriz from "../../assets/icons/SwapHoriz.svg";
 import Menu from "../../assets/icons/Menu.svg";
 import LeftPanelClose from "../../assets/icons/LeftPanelClose.svg";
-import { twMerge } from "tailwind-merge";
 import IconButton from "../IconButton";
+import YouTube from "../../assets/images/YouTube.png";
+import Medium from "../../assets/images/Medium.png";
 
 type SidebarProps = {
   isMobile: boolean;
   isSidebarOpen: any;
   setIsSidebarOpen: (state: any) => void;
 };
+
+const applications = [
+  {
+    label: "Notarization",
+    icon: EditDocument,
+    src: "/notarization",
+  },
+  {
+    label: "Signature verifier",
+    icon: VerifiedUser,
+    src: "/signature-verifier",
+  },
+  {
+    label: "Proof of funds",
+    icon: Savings,
+    src: "/proof-of-funds",
+  },
+  {
+    label: "BIP39 word converter",
+    icon: SwapHoriz,
+    src: "/bip39-converter",
+  },
+];
 
 const Sidebar: FC<SidebarProps> = ({
   isMobile,
@@ -65,30 +91,15 @@ const Sidebar: FC<SidebarProps> = ({
               </Tooltip>
             </TooltipProvider>
           )}
-          <SidebarMenuItem
-            label="Notarization"
-            icon={EditDocument}
-            src="/notarization"
-            onClick={handleClick}
-          />
-          <SidebarMenuItem
-            label="Signature verifier"
-            icon={VerifiedUser}
-            src="/signature-verifier"
-            onClick={handleClick}
-          />
-          <SidebarMenuItem
-            label="Proof of funds"
-            icon={Savings}
-            src="/proof-of-funds"
-            onClick={handleClick}
-          />
-          <SidebarMenuItem
-            label="BIP39 word converter"
-            icon={SwapHoriz}
-            src="/bip39-converter"
-            onClick={handleClick}
-          />
+          {applications.map((app) => (
+            <SidebarMenuItem
+              key={app.src}
+              label={app.label}
+              icon={app.icon}
+              src={app.src}
+              onClick={handleClick}
+            />
+          ))}
           <div className="w-full p-2">
             <span className="text-sm font-bold text-gray-700">Soon</span>
           </div>
@@ -102,6 +113,25 @@ const Sidebar: FC<SidebarProps> = ({
             icon={SeedPhraseImage}
             onClick={handleClick}
           />
+
+          <div className="flex flex-1 items-end">
+            <div className="flex flex-col">
+              <SidebarMenuItem
+                label="YouTube channel"
+                icon={YouTube}
+                src="https://www.youtube.com/@OperationBlockchain"
+                onClick={handleClick}
+                externalLink
+              />
+              <SidebarMenuItem
+                label="Medium articles"
+                icon={Medium}
+                src="https://medium.com/@martins87"
+                onClick={handleClick}
+                externalLink
+              />
+            </div>
+          </div>
         </div>
       )}
     </>
