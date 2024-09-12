@@ -1,5 +1,10 @@
 import { FC, useState } from "react";
-import Image from "next/image";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import SidebarMenuItem from "./SidebarMenuItem";
 import SeedPhraseImage from "../../assets/icons/Image.svg";
@@ -49,12 +54,16 @@ const Sidebar: FC<SidebarProps> = ({
           )}
         >
           {isSidebarOpen && isMobile && (
-            <div
-              className="tooltip tooltip-right text-white"
-              data-tip="Close sidebar"
-            >
-              <IconButton onClick={handleClick} icon={LeftPanelClose} />
-            </div>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <IconButton onClick={handleClick} icon={LeftPanelClose} />
+                </TooltipTrigger>
+                <TooltipContent side="right">
+                  <p>Close sidebar</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
           <SidebarMenuItem
             label="Notarization"

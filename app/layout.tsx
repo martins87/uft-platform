@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { useMediaQuery } from "react-responsive";
