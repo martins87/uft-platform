@@ -31,8 +31,9 @@ const ProofOfFunds = () => {
           </p>
         }
       />
-      <span className="w-fit min-h-12 -mt-8 mb-10 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-lg text-clip">
-        Total amount you own: ₿ {totalAmount.toFixed(8)}
+      <span className="w-fit min-h-12 -mt-8 mb-10 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-lg text-center">
+        Total amount you own: <br className="md:hidden" />₿{" "}
+        {totalAmount.toFixed(8)}
       </span>
       <Card className="gap-y-[12px]">
         <div className="flex flex-col items-center justify-center gap-4 text-xl text-gray-700">

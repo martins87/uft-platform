@@ -126,7 +126,7 @@ const Funds: FC<FundsProps> = ({
     <div className="flex flex-col gap-4 border rounded-md p-4">
       <h4 className="text-xl font-bold">Funds #{index}</h4>
 
-      <div className="flex items-center gap-x-2">
+      <div className="flex flex-col gap-2 md:flex-row md:items-center gap-x-2">
         <span className="text-gray-700 min-w-20">Address:</span>
         <input
           className="w-full h-10 border rounded-md px-4 text-sm focus:outline-none"
@@ -137,7 +137,7 @@ const Funds: FC<FundsProps> = ({
         />
       </div>
 
-      <div className="flex items-center gap-x-2">
+      <div className="flex flex-col gap-2 md:flex-row md:items-center gap-x-2">
         <span className="text-gray-700 min-w-20">Balance:</span>
         <span className="w-fit min-h-12 flex items-center gap-2 bg-orange-100 text-lg px-4 py-2 rounded-lg text-clip">
           {!address.length ? (
@@ -156,7 +156,7 @@ const Funds: FC<FundsProps> = ({
         </span>
       </div>
 
-      <div className="flex items-center gap-x-2">
+      <div className="flex flex-col gap-2 md:flex-row md:items-center gap-x-2">
         <span className="text-gray-700 min-w-20">Signature:</span>
         <textarea
           className={twMerge(

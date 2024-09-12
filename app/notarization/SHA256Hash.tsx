@@ -14,7 +14,7 @@ const SHA256Hash: FC<SHA256Hash> = ({ data, toHash }) => {
   };
 
   return (
-    <div className="flex items-center gap-2 -mt-4">
+    <div className="flex flex-col md:flex-row items-center gap-2 -mt-4">
       <span className="text-sm">SHA256 hash:</span>
       <span className="w-fit text-sm bg-gray-100 p-2 rounded-lg text-clip xl:hidden">
         {truncated(dataToShow)}
