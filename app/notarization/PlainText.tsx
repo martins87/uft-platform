@@ -30,7 +30,7 @@ const PlainText = () => {
     <Card>
       <span className="text-xl text-center">Plain text</span>
       <textarea
-        className="textarea textarea-bordered min-h-36 p-2 border rounded-md focus:outline-none"
+        className="textarea textarea-bordered min-h-36 p-2 border rounded-xl focus:outline-none"
         value={data}
         onChange={(e) => setData(e.target.value)}
         placeholder="Type here..."
