@@ -9,6 +9,7 @@ import Button from "../components/Button";
 import TxLink from "./TxLink";
 import SHA256Hash from "./SHA256Hash";
 import LoadingTx from "./LoadingTx";
+import Stylus from "../assets/icons/Stylus.svg";
 
 const PlainText = () => {
   const [data, setData] = useState<string>("");
@@ -37,7 +38,13 @@ const PlainText = () => {
       <SHA256Hash data={data} toHash />
       <div className="flex gap-2">
         <Button secondary onClick={handleReset} label="Reset" />
-        <Button primary onClick={handleRegister} label="Register" />
+        <Button
+          primary
+          onClick={handleRegister}
+          label="Register"
+          icon={Stylus}
+          iconSide="right"
+        />
       </div>
       <LoadingTx loading={loading} />
       <TxLink txHash={txHash} />
