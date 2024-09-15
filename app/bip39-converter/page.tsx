@@ -86,14 +86,14 @@ const BIP39Converter = () => {
         <span className="mx-auto text-gray-900">Hexadecimal to word</span>
         <div className="flex flex-col lg:flex-row gap-x-4 -mt-5">
           <input
-            className="w-44 h-12 border rounded-md px-4 text-lg focus:outline-none"
+            className="w-44 h-12 border rounded-xl px-4 text-lg focus:outline-none"
             type="text"
             value={hexadecimalWord}
             onChange={handleChange}
             placeholder="e.g. 52E"
           />
           <Arrow />
-          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
+          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-xl">
             {hexadecimalWord ? (
               <span className="text-lg">{bip39Word}</span>
             ) : (
@@ -113,14 +113,14 @@ const BIP39Converter = () => {
         <span className="mx-auto text-gray-900">Word to decimal</span>
         <div className="relative flex flex-col lg:flex-row gap-x-4 -mt-5">
           <input
-            className="w-44 h-12 border rounded-md px-4 text-lg focus:outline-none"
+            className="w-44 h-12 border rounded-xl px-4 text-lg focus:outline-none"
             type="text"
             value={decimalWord}
             onChange={handleChangeDecimal}
             placeholder="e.g. dance"
           />
           <Arrow />
-          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-lg">
+          <div className="relative w-44 min-h-12 flex items-center justify-center gap-2 px-4 py-2 bg-green-100 border border-green-300 rounded-xl">
             {decimalWord ? (
               <span className="text-lg">{decimal}</span>
             ) : (
