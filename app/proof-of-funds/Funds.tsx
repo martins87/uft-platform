@@ -123,13 +123,13 @@ const Funds: FC<FundsProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 border rounded-md p-4">
+    <div className="flex flex-col gap-4 border rounded-xl p-4">
       <h4 className="text-xl font-bold">Funds #{index}</h4>
 
       <div className="flex flex-col gap-2 md:flex-row md:items-center gap-x-2">
         <span className="text-gray-700 min-w-20">Address:</span>
         <input
-          className="w-full h-10 border rounded-md px-4 text-sm focus:outline-none"
+          className="w-full h-10 border rounded-xl px-4 text-sm focus:outline-none"
           type="text"
           value={address}
           onChange={onAddressChange}
@@ -139,7 +139,7 @@ const Funds: FC<FundsProps> = ({
 
       <div className="flex flex-col gap-2 md:flex-row md:items-center gap-x-2">
         <span className="text-gray-700 min-w-20">Balance:</span>
-        <span className="w-fit min-h-12 flex items-center gap-2 bg-orange-100 text-lg px-4 py-2 rounded-lg text-clip">
+        <span className="w-fit min-h-12 flex items-center gap-2 bg-orange-100 text-lg px-4 py-2 rounded-xl text-clip">
           {!address.length ? (
             <span className="text-sm text-gray-500">
               Enter a Bitcoin address to fetch balance
@@ -160,7 +160,7 @@ const Funds: FC<FundsProps> = ({
         <span className="text-gray-700 min-w-20">Signature:</span>
         <textarea
           className={twMerge(
-            "w-full min-h-20 px-4 py-2 border rounded-md text-sm focus:outline-none",
+            "w-full min-h-20 px-4 py-2 border rounded-xl text-sm focus:outline-none",
             sigBgColor
           )}
           value={signature}
@@ -178,8 +178,8 @@ const Funds: FC<FundsProps> = ({
           // TODO add validation
         />
 
-        {messageVisible && (
-          <div className="flex gap-x-2 mx-auto">
+        {/* {messageVisible && (
+          <div className="hidden md:flex gap-x-2 mx-auto">
             <Image
               src={
                 resultSymbol == VerificationMessage.Valid
@@ -192,8 +192,24 @@ const Funds: FC<FundsProps> = ({
             />
             <span>{resultMessage}</span>
           </div>
-        )}
+        )} */}
       </div>
+
+      {messageVisible && (
+        <div className="flex gap-x-2 mx-auto lg:text-right tablet:hidden">
+          <Image
+            src={
+              resultSymbol == VerificationMessage.Valid
+                ? BadgeCheck
+                : resultSymbol == VerificationMessage.Invalid
+                ? CircleX
+                : TriangleAlert
+            }
+            alt="Valid signature"
+          />
+          <span>{resultMessage}</span>
+        </div>
+      )}
     </div>
   );
 };

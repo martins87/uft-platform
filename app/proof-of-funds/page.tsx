@@ -31,7 +31,7 @@ const ProofOfFunds = () => {
           </p>
         }
       />
-      <span className="w-fit min-h-12 -mt-8 mb-10 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-lg text-center">
+      <span className="w-fit min-h-12 -mt-8 mb-10 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-xl text-center">
         Total amount you own: <br className="md:hidden" />₿{" "}
         {totalAmount.toFixed(8)}
       </span>
@@ -40,7 +40,7 @@ const ProofOfFunds = () => {
           <span>Message</span>
         </div>
         <textarea
-          className="textarea textarea-bordered min-h-20 px-4 py-2 border rounded-md text-sm focus:outline-none mb-6"
+          className="textarea textarea-bordered min-h-20 px-4 py-2 border rounded-xl text-sm focus:outline-none mb-6"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="e.g. The Times 03/Jan/2009 Chancellor on brink of second bailout for banks."
@@ -58,11 +58,12 @@ const ProofOfFunds = () => {
         ))}
 
         <Button
-          className="px-2 gap-1 mx-auto mt-4"
+          className="gap-1 mx-auto mt-4"
           primary
           onClick={handleAddFund}
           label="Add funds"
           icon={Plus}
+          iconSide="left"
         />
       </Card>
     </Container>
