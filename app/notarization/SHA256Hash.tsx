@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import sha256 from "crypto-js/sha256";
-import { twMerge } from "tailwind-merge";
 
 type SHA256Hash = {
   data: string;
