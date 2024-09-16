@@ -10,11 +10,13 @@ import TxLink from "./TxLink";
 import SHA256Hash from "./SHA256Hash";
 import LoadingTx from "./LoadingTx";
 import Stylus from "../assets/icons/Stylus.svg";
+import { Switch } from "@/components/ui/switch";
 
 const PlainText = () => {
   const [data, setData] = useState<string>("");
   const [txHash, setTxHash] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [toHash, setToHash] = useState<boolean>(false);
 
   const handleReset = () => setData("");
 
@@ -26,8 +28,10 @@ const PlainText = () => {
     setLoading(false);
   };
 
+  const handleSwitch = () => setToHash((state) => !state);
+
   return (
-    <Card>
+    <Card className="gap-y-4">
       <span className="text-xl text-center">Plain text</span>
       <textarea
         className="textarea textarea-bordered min-h-36 p-2 border rounded-xl focus:outline-none"
@@ -35,7 +39,12 @@ const PlainText = () => {
         onChange={(e) => setData(e.target.value)}
         placeholder="Type here..."
       ></textarea>
-      <SHA256Hash data={data} toHash />
+      <div className="flex items-center gap-x-2">
+        <span>Hexadecimal</span>
+        <Switch onClick={handleSwitch} />
+        <span>SHA256 hash</span>
+      </div>
+      <SHA256Hash data={data} toHash={toHash} />
       <div className="flex gap-2">
         <Button secondary onClick={handleReset} label="Reset" />
         <Button
