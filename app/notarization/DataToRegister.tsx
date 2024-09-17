@@ -7,9 +7,12 @@ type DataToRegisterProps = {
 };
 
 const DataToRegister: FC<DataToRegisterProps> = ({ data, toHash }) => {
-  const dataToShow = toHash
-    ? sha256(data).toString()
-    : Buffer.from(data, "utf8").toString("hex");
+  const dataToShow =
+    toHash === true
+      ? sha256(data).toString()
+      : toHash === false
+      ? Buffer.from(data, "utf8").toString("hex")
+      : data;
 
   const truncated = (hash: string) => {
     return hash.substring(0, 10) + "..." + hash.slice(-10);
