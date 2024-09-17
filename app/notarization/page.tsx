@@ -9,6 +9,7 @@ import PlainText from "./PlainText";
 import File from "./File";
 import TxList from "./TxList";
 import Pen from "../assets/icons/Pen.svg";
+// import Edit from "../assets/icons/Edit";
 import PaperClip from "../assets/icons/PaperClip.svg";
 import List from "../assets/icons/List.svg";
 
@@ -27,7 +28,10 @@ const Notarization = () => {
           </p>
         }
       />
-      <div className="w-[80%] md:w-full flex gap-6 float-left mb-4">
+      <div className="w-full flex gap-6 float-left mb-4">
+        {/* <Icon onClick={() => setCard(0)}>
+          <Edit />
+        </Icon> */}
         <Icon icon={Pen} onClick={() => setCard(0)} />
         <Icon icon={PaperClip} onClick={() => setCard(1)} />
         <Icon icon={List} onClick={() => setCard(2)} />
