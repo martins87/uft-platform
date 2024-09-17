@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 import sha256 from "crypto-js/sha256";
 
-type SHA256Hash = {
+type DataToRegisterProps = {
   data: string;
   toHash?: boolean;
 };
 
-const SHA256Hash: FC<SHA256Hash> = ({ data, toHash }) => {
+const DataToRegister: FC<DataToRegisterProps> = ({ data, toHash }) => {
   const dataToShow = toHash
     ? sha256(data).toString()
     : Buffer.from(data, "utf8").toString("hex");
@@ -38,4 +38,4 @@ const SHA256Hash: FC<SHA256Hash> = ({ data, toHash }) => {
   );
 };
 
-export default SHA256Hash;
+export default DataToRegister;

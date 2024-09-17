@@ -7,7 +7,7 @@ import { register } from "../lib/register";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import TxLink from "./TxLink";
-import SHA256Hash from "./SHA256Hash";
+import DataToRegister from "./DataToRegister";
 import LoadingTx from "./LoadingTx";
 import Stylus from "../assets/icons/Stylus.svg";
 import { Switch } from "@/components/ui/switch";
@@ -44,7 +44,7 @@ const PlainText = () => {
         <Switch onClick={handleSwitch} />
         <span>SHA256 hash</span>
       </div>
-      <SHA256Hash data={data} toHash={toHash} />
+      <DataToRegister data={data} toHash={toHash} />
       <div className="flex gap-2">
         <Button secondary onClick={handleReset} label="Reset" />
         <Button
