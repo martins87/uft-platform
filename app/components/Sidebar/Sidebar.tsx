@@ -17,6 +17,7 @@ import AccountBalanceWallet from "../../assets/icons/AccountBalanceWallet.svg";
 import SwapHoriz from "../../assets/icons/SwapHoriz.svg";
 import Menu from "../../assets/icons/Menu.svg";
 import LeftPanelClose from "../../assets/icons/LeftPanelClose.svg";
+import Workspaces from "../../assets/icons/Workspaces.svg";
 import IconButton from "../IconButton";
 import YouTube from "../../assets/images/YouTube.png";
 import Medium from "../../assets/images/Medium.png";
@@ -111,6 +112,11 @@ const Sidebar: FC<SidebarProps> = ({
           <SidebarMenuItem
             label="Seed phase into image"
             icon={SeedPhraseImage}
+            onClick={handleClick}
+          />
+          <SidebarMenuItem
+            label="Multisig address creator"
+            icon={Workspaces}
             onClick={handleClick}
           />
 
