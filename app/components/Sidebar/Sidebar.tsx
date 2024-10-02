@@ -49,6 +49,11 @@ const applications = [
     icon: SwapHoriz,
     src: "/bip39-converter",
   },
+  {
+    label: "Multisig address creator",
+    icon: Workspaces,
+    src: "/multisig-address-creator",
+  },
 ];
 
 const Sidebar: FC<SidebarProps> = ({
@@ -112,11 +117,6 @@ const Sidebar: FC<SidebarProps> = ({
           <SidebarMenuItem
             label="Seed phase into image"
             icon={SeedPhraseImage}
-            onClick={handleClick}
-          />
-          <SidebarMenuItem
-            label="Multisig address creator"
-            icon={Workspaces}
             onClick={handleClick}
           />
 
