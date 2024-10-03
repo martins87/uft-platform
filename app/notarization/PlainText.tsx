@@ -23,7 +23,10 @@ const PlainText = () => {
   // TODO make useRegister hook
   const handleRegister = async () => {
     setLoading(true);
-    let hash: string = await register(sha256(data).toString());
+
+    let dataToRegister: string = toHash ? sha256(data).toString() : data;
+    let hash: string = await register(dataToRegister);
+
     setTxHash(hash);
     setLoading(false);
   };
