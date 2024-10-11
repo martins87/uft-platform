@@ -42,8 +42,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={geistSans.variable}>
         <div className="w-full h-screen flex items-center justify-center p-4">
-          <div className="relative w-full h-full flex items-center justify-center border border-gray-400 overflow-hidden">
-            {/* <div className="relative w-full h-full flex items-center justify-center overflow-hidden"> */}
+          <div className="relative w-full h-full flex items-center justify-center md:border md:border-gray-400 overflow-hidden">
             <Sidebar
               isMobile={isMobile}
               isSidebarOpen={isSidebarOpen}
