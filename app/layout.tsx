@@ -18,16 +18,8 @@ const geistSans = localFont({
       weight: "400",
     },
     {
-      path: "./assets/fonts/Geist-SemiBold.otf",
-      weight: "600",
-    },
-    {
       path: "./assets/fonts/Geist-Bold.otf",
       weight: "700",
-    },
-    {
-      path: "./assets/fonts/Geist-ExtraBold.otf",
-      weight: "800",
     },
   ],
   variable: "--font-geist-sans",
