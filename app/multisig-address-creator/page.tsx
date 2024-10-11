@@ -40,9 +40,9 @@ const MultisigAddressCreator = () => {
             setPubKeys={setPubKeys}
           />
         ))}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-center gap-2">
           <Button
-            className="gap-2"
+            className="gap-2 w-full mobile:w-fit"
             primary
             onClick={handleAddPubKey}
             label="Add pubkey"
@@ -50,9 +50,10 @@ const MultisigAddressCreator = () => {
             iconSide="left"
           />
           <Button
+            className="w-full mobile:w-fit"
             primary
             onClick={handleCreateAddress}
-            label="Create multisig address"
+            label="Create address"
           />
         </div>
         <div className="flex items-center gap-2 mx-auto mt-4">
