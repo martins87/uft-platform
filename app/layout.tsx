@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 // import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import localFont from "next/font/local";
 import { twMerge } from "tailwind-merge";
 import { useMediaQuery } from "react-responsive";
 
@@ -11,11 +11,26 @@ import Logo from "./components/Logo";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
+const geistSans = localFont({
+  src: [
+    {
+      path: "./assets/fonts/Geist-Regular.otf",
+      weight: "400",
+    },
+    {
+      path: "./assets/fonts/Geist-SemiBold.otf",
+      weight: "600",
+    },
+    {
+      path: "./assets/fonts/Geist-Bold.otf",
+      weight: "700",
+    },
+    {
+      path: "./assets/fonts/Geist-ExtraBold.otf",
+      weight: "800",
+    },
+  ],
+  variable: "--font-geist-sans",
 });
 
 // export const metadata: Metadata = {
@@ -33,9 +48,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={twMerge(inter.className, `${fraunces.variable}`)}>
+      <body className={geistSans.variable}>
         <div className="w-full h-screen flex items-center justify-center p-4">
           <div className="relative w-full h-full flex items-center justify-center border border-gray-400 overflow-hidden">
+            {/* <div className="relative w-full h-full flex items-center justify-center overflow-hidden"> */}
             <Sidebar
               isMobile={isMobile}
               isSidebarOpen={isSidebarOpen}

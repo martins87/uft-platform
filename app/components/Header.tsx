@@ -8,9 +8,7 @@ type HeaderProps = {
 const Header: FC<HeaderProps> = ({ title, subtitle }) => {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-4 mb-12 text-center">
-      <h1 className="text-4xl md:text-6xl font-fraunces font-semibold">
-        {title}
-      </h1>
+      <h1 className="text-4xl md:text-6xl font-bold">{title}</h1>
       {subtitle}
     </div>
   );
