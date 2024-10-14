@@ -9,18 +9,28 @@ import Button from "../components/Button";
 import PubKey from "./PubKey";
 import Plus from "../assets/icons/Plus.svg";
 import { createMultisigAddress } from "../lib/bitcoin";
+import { twMerge } from "tailwind-merge";
+import DropdownMenuCheckboxes from "./Dropbox";
 
 const MultisigAddressCreator = () => {
+  const [signatures, setSignatures] = useState<number>(1);
   const [pubKeys, setPubKeys] = useState<string[]>([""]);
   const [multisigAddress, setMultisigAddress] = useState<string>("?");
 
   const handleAddPubKey = () => setPubKeys((state: string[]) => [...state, ""]);
 
-  const handleCreateAddress = () => {
-    let { address } = createMultisigAddress(pubKeys, 2);
+  const truncateAddress = (hash: string) => {
+    return hash.substring(0, 7) + "..." + hash.slice(-7);
+  };
 
-    setMultisigAddress(address!);
-    console.log("multisig address:", address);
+  const handleCreateAddress = () => {
+    try {
+      let { address } = createMultisigAddress(pubKeys, signatures);
+
+      setMultisigAddress(address!);
+    } catch (error) {
+      console.error("Error on creating the multisig address", error);
+    }
   };
 
   return (
@@ -32,6 +42,11 @@ const MultisigAddressCreator = () => {
         }
       />
       <Card className="gap-y-4">
+        <DropdownMenuCheckboxes
+          pubKeysNumber={pubKeys}
+          signatures={signatures}
+          setSignatures={setSignatures}
+        />
         {pubKeys.map((_: any, index: number) => (
           <PubKey
             key={index}
@@ -56,8 +71,13 @@ const MultisigAddressCreator = () => {
             label="Create address"
           />
         </div>
-        <div className="flex items-center gap-2 mx-auto mt-4">
-          <span>Multisig address:</span>
+        <div
+          className={twMerge(
+            "flex items-center gap-2 mx-auto mt-4",
+            multisigAddress.length > 1 ? "flex-col" : ""
+          )}
+        >
+          <span>{`${signatures}-of-${pubKeys.length} multisig address:`}</span>
           <span className="w-fit min-h-12 flex items-center gap-2 bg-orange-100 border border-orange-300 text-lg px-4 py-2 rounded-xl text-center">
             {multisigAddress}
           </span>
