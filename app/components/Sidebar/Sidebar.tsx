@@ -21,6 +21,7 @@ import Workspaces from "../../assets/icons/Workspaces.svg";
 import IconButton from "../IconButton";
 import YouTube from "../../assets/images/YouTube.png";
 import Medium from "../../assets/images/Medium.png";
+import LinkedIn from "../../assets/images/LinkedIn.png";
 
 type SidebarProps = {
   isMobile: boolean;
@@ -133,6 +134,13 @@ const Sidebar: FC<SidebarProps> = ({
                 label="Medium articles"
                 icon={Medium}
                 src="https://medium.com/@martins87"
+                onClick={handleClick}
+                externalLink
+              />
+              <SidebarMenuItem
+                label="LinkedIn"
+                icon={LinkedIn}
+                src="https://www.linkedin.com/in/daniel-aa-martins/"
                 onClick={handleClick}
                 externalLink
               />
