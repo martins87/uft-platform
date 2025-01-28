@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
+import Image from "next/image";
 import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
 
 import { Button } from "@/components/ui/button";
@@ -12,8 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import KeyboardArrowDown from "../assets/icons/KeyboardArrowDown.svg";
-import Image from "next/image";
+import KeyboardArrowDown from "../../assets/icons/KeyboardArrowDown.svg";
 
 type DropdownMenuCheckboxesProps = {
   pubKeysNumber: string[];

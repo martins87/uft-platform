@@ -4,11 +4,11 @@ import bitcoinMessage from "bitcoinjs-message";
 import axios from "axios";
 import { twMerge } from "tailwind-merge";
 
-import { getPriceInUSD } from "../lib/market";
-import Button from "../components/Button";
-import BadgeCheck from "../assets/icons/BadgeCheck.svg";
-import CircleX from "../assets/icons/CircleX.svg";
-import TriangleAlert from "../assets/icons/TriangleAlert.svg";
+import { getPriceInUSD } from "../../lib/market";
+import Button from "../../components/Button";
+import BadgeCheck from "../../assets/icons/BadgeCheck.svg";
+import CircleX from "../../assets/icons/CircleX.svg";
+import TriangleAlert from "../../assets/icons/TriangleAlert.svg";
 
 enum VerificationMessage {
   Valid,

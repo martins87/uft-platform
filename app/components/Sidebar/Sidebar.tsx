@@ -116,7 +116,7 @@ const Sidebar: FC<SidebarProps> = ({
             onClick={handleClick}
           />
           <SidebarMenuItem
-            label="Seed phase into image"
+            label="Seed phrase into image"
             icon={SeedPhraseImage}
             onClick={handleClick}
           />

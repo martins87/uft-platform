@@ -3,10 +3,10 @@
 import { useState } from "react";
 import CryptoJS from "crypto-js";
 
-import { register } from "../lib/register";
-import { loadFile } from "../lib/load-file";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import { register } from "../../lib/register";
+import { loadFile } from "../../lib/load-file";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import DataToRegister from "./DataToRegister";
 import TxLink from "./TxLink";
 import LoadingTx from "./LoadingTx";

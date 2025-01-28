@@ -5,13 +5,13 @@ import Image from "next/image";
 import converter from "hex2dec";
 import { twMerge } from "tailwind-merge";
 
-import Container from "../components/Container";
-import Header from "../components/Header";
-import Card from "../components/Card";
-import Copy from "../assets/icons/Copy.svg";
-import Check from "../assets/icons/Check.svg";
-import { bip39Words } from "../data/bip0039-english.js";
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import Card from "../../components/Card";
 import Arrow from "./Arrow";
+import { bip39Words } from "../../data/bip0039-english.js";
+import Copy from "../../assets/icons/Copy.svg";
+import Check from "../../assets/icons/Check.svg";
 
 const words = ["Taxation is theft", ...bip39Words];
 

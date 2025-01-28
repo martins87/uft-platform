@@ -5,13 +5,13 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import bitcoinMessage from "bitcoinjs-message";
 
-import Button from "../components/Button";
-import Card from "../components/Card";
-import Container from "../components/Container";
-import Header from "../components/Header";
-import BadgeCheck from "../assets/icons/BadgeCheck.svg";
-import CircleX from "../assets/icons/CircleX.svg";
-import TriangleAlert from "../assets/icons/TriangleAlert.svg";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import BadgeCheck from "../../assets/icons/BadgeCheck.svg";
+import CircleX from "../../assets/icons/CircleX.svg";
+import TriangleAlert from "../../assets/icons/TriangleAlert.svg";
 
 enum VerificationMessage {
   Valid,

@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 
-import Container from "../components/Container";
-import Icon from "../components/Icon";
-import Header from "../components/Header";
+import Container from "../../components/Container";
+import Icon from "../../components/Icon";
+import Header from "../../components/Header";
 import PlainText from "./PlainText";
 import File from "./File";
 import TxList from "./TxList";
-import Pen from "../assets/icons/Pen.svg";
-// import Edit from "../assets/icons/Edit";
-import PaperClip from "../assets/icons/PaperClip.svg";
-import List from "../assets/icons/List.svg";
+import Pen from "../../assets/icons/Pen.svg";
+// import Edit from "../../assets/icons/Edit";
+import PaperClip from "../../assets/icons/PaperClip.svg";
+import List from "../../assets/icons/List.svg";
 
 const Notarization = () => {
   const [card, setCard] = useState(0);

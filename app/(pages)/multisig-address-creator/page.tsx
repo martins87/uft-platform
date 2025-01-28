@@ -4,16 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
-import Container from "../components/Container";
-import Header from "../components/Header";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import PubKey from "./PubKey";
-import Plus from "../assets/icons/Plus.svg";
-import { createMultisigAddress } from "../lib/bitcoin";
 import DropdownMenuCheckboxes from "./Dropbox";
-import Copy from "../assets/icons/Copy.svg";
-import Check from "../assets/icons/Check.svg";
+import { createMultisigAddress } from "../../lib/bitcoin";
+import Plus from "../../assets/icons/Plus.svg";
+import Copy from "../../assets/icons/Copy.svg";
+import Check from "../../assets/icons/Check.svg";
 
 const MultisigAddressCreator = () => {
   const [signatures, setSignatures] = useState<number>(1);

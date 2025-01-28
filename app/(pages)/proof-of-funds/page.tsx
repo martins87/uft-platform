@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 
-import Container from "../components/Container";
-import Header from "../components/Header";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import Funds from "./Funds";
-import Plus from "../assets/icons/Plus.svg";
+import Plus from "../../assets/icons/Plus.svg";
 
 const ProofOfFunds = () => {
   const [message, setMessage] = useState<string>("");

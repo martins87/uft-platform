@@ -3,13 +3,13 @@
 import { useState } from "react";
 import sha256 from "crypto-js/sha256";
 
-import { register } from "../lib/register";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import { register } from "../../lib/register";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 import TxLink from "./TxLink";
 import DataToRegister from "./DataToRegister";
 import LoadingTx from "./LoadingTx";
-import Stylus from "../assets/icons/Stylus.svg";
+import Stylus from "../../assets/icons/Stylus.svg";
 import { Switch } from "@/components/ui/switch";
 
 const PlainText = () => {

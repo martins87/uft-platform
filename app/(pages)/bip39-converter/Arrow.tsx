@@ -1,8 +1,8 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import ChevronRight from "../assets/icons/ChevronRight.svg";
-import KeyboardArrowDown from "../assets/icons/KeyboardArrowDown.svg";
+import ChevronRight from "../../assets/icons/ChevronRight.svg";
+import KeyboardArrowDown from "../../assets/icons/KeyboardArrowDown.svg";
 
 const Arrow: FC = () => {
   return (
