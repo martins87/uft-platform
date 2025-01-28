@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
 
 import Container from "../../components/Container";
 import Header from "../../components/Header";
@@ -16,6 +17,10 @@ const ProofOfFunds = () => {
   const [addresses, setAddresses] = useState<string[]>([
     "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
   ]);
+
+  useEffect(() => {
+    redirect("https://www.operationblockchain.app/proof-of-funds/");
+  }, []);
 
   const handleAddFund = () =>
     setFunds((state: number[]) => [...state, funds.length]);

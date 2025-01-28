@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
 import Container from "../../components/Container";
@@ -20,6 +21,10 @@ const MultisigAddressCreator = () => {
   const [pubKeys, setPubKeys] = useState<string[]>([""]);
   const [multisigAddress, setMultisigAddress] = useState<string>("?");
   const [icons, setIcons] = useState<any[]>([Copy, Copy]);
+
+  useEffect(() => {
+    redirect("https://www.operationblockchain.app/multisig-address-creator/");
+  }, []);
 
   const handleAddPubKey = () => setPubKeys((state: string[]) => [...state, ""]);
 
