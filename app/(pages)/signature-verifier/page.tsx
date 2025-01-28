@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
+import { useState } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import bitcoinMessage from "bitcoinjs-message";
@@ -30,10 +29,6 @@ const SignatureVerifier = () => {
   const [resultSymbol, setResultSymbol] = useState<VerificationMessage>(
     VerificationMessage.Invalid
   );
-
-  useEffect(() => {
-    redirect("https://www.operationblockchain.app/signature-verifier/");
-  }, []);
 
   const handleVerify = () => {
     try {

@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { redirect } from "next/navigation";
+import { useState } from "react";
 
 import Container from "../../components/Container";
 import Icon from "../../components/Icon";
@@ -16,10 +15,6 @@ import List from "../../assets/icons/List.svg";
 
 const Notarization = () => {
   const [card, setCard] = useState(0);
-
-  useEffect(() => {
-    redirect("https://www.operationblockchain.app/notarization/");
-  }, []);
 
   return (
     <Container>

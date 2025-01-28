@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 
 export default function Home() {
   useEffect(() => {
-    redirect("https://www.operationblockchain.app/");
+    redirect("https://www.operationblockchain.app/notarization");
   }, []);
 
   return <p>Hello there</p>;
