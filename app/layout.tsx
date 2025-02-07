@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { twMerge } from "tailwind-merge";
 import { useMediaQuery } from "react-responsive";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Sidebar from "./components/Sidebar/Sidebar";
 import Logo from "./components/Logo";
@@ -25,10 +26,10 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
 });
 
-// export const metadata: Metadata = {
-//   title: "Operation Blockchain",
-//   description: "A platform for Bitcoin services",
-// };
+export const metadata: Metadata = {
+  title: "Operation Blockchain",
+  description: "A platform for Bitcoin services",
+};
 
 export default function RootLayout({
   children,
@@ -41,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={geistSans.variable}>
+        <SpeedInsights />
         <div className="w-full h-screen flex items-center justify-center p-4">
           <div className="relative w-full h-full flex items-center justify-center md:border md:border-gray-400 overflow-hidden">
             <Sidebar
