@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+
 import localFont from "next/font/local";
 import { twMerge } from "tailwind-merge";
 import { useMediaQuery } from "react-responsive";
@@ -25,11 +25,6 @@ const geistSans = localFont({
   ],
   variable: "--font-geist-sans",
 });
-
-export const metadata: Metadata = {
-  title: "Operation Blockchain",
-  description: "A platform for Bitcoin services",
-};
 
 export default function RootLayout({
   children,
