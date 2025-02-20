@@ -141,7 +141,7 @@ const Sidebar: FC<SidebarProps> = ({
               <SidebarMenuItem
                 label="My Telegram"
                 icon={Telegram}
-                src="https://http://t.me/daniem87/"
+                src="https://t.me/daniem87/"
                 onClick={handleClick}
                 externalLink
               />
