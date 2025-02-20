@@ -22,6 +22,7 @@ import IconButton from "../IconButton";
 import YouTube from "../../assets/images/YouTube.png";
 import Medium from "../../assets/images/Medium.png";
 import LinkedIn from "../../assets/images/LinkedIn.png";
+import Telegram from "../../assets/icons/Telegram.svg";
 
 type SidebarProps = {
   isMobile: boolean;
@@ -138,7 +139,14 @@ const Sidebar: FC<SidebarProps> = ({
                 externalLink
               />
               <SidebarMenuItem
-                label="LinkedIn"
+                label="My Telegram"
+                icon={Telegram}
+                src="https://http://t.me/daniem87/"
+                onClick={handleClick}
+                externalLink
+              />
+              <SidebarMenuItem
+                label="My LinkedIn"
                 icon={LinkedIn}
                 src="https://www.linkedin.com/in/daniel-aa-martins/"
                 onClick={handleClick}
